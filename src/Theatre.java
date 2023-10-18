@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Theatre {
     private final String theatreName;
-    private final List<Seat> seats = new ArrayList<>();
+    public final List<Seat> seats = new ArrayList<>();
 
     public Theatre(String theatreName, int numRows, int seatsPerRow) {
         this.theatreName = theatreName;
@@ -71,7 +71,7 @@ public class Theatre {
         for (Seat seat : seats) System.out.println(seat.getSeatNumber());
     }
 
-    private static class Seat implements Comparable<Seat> {
+    public static class Seat implements Comparable<Seat> {
         private final String seatNumber;
         private boolean reserved = false;
 
