@@ -1,12 +1,17 @@
 import java.util.*;
 
 public class Theatre {
-    static final Comparator<Seat> PRICE_ORDER = new Comparator<Seat>() {
-        @Override
-        public int compare(Seat seat1, Seat seat2) {
-            return Double.compare(seat1.getPrice(), seat2.getPrice());
-        }
-    };
+    static final Comparator<Seat> PRICE_ORDER;
+
+    static {
+        PRICE_ORDER = new Comparator<Seat>() {
+            @Override
+            public int compare(Seat seat1, Seat seat2) {
+                return Double.compare(seat1.getPrice(), seat2.getPrice());
+            }
+        };
+    }
+
     private final String theatreName;
     private final List<Seat> seats = new ArrayList<>();
 
